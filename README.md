@@ -7,7 +7,7 @@
 
 ##Live App
 
-Hosted at https://lib-manage.herokuapp.com/
+Hosted at https://system-lib-main.herokuapp.com/
 
 ## Tech Stack Used
 
