@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Library Web page using MERN stack",
   "main": "server.js",
+  "engines": {
+    "node": "14.17.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client-install": "npm install --prefix client",
