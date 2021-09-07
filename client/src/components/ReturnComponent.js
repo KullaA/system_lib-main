@@ -27,20 +27,20 @@ function RenderIssue ({issue,i,returnBook}) {
             {i}
             </td>
             <td>
-        <Link to={`/users/${issue.student._id}`}>
-        {issue.student.firstname+' '+issue.student.lastname}
+        <Link to={`/users/${issue.studentId}`}>
+        {issue.studentFirstname+' '+issue.studentLastname}
             </Link>
             </td>
             <td>
-            {issue.student.roll}
+            {issue.studentRoll}
             </td>
             <td>
-            <Link to={`/books/${issue.book._id}`}>
+                {issue.book==null ? "N/A":<Link to={`/books/${issue.book._id}`}>
             {issue.book.name}
-            </Link>
+            </Link>}
             </td>
             <td>
-            {issue.book.isbn}
+            {issue.book==null ? "N/A":issue.book.isbn}     
             </td>
             <td>
                 {new Intl.DateTimeFormat('en-US',{year: 'numeric', month: 'short', day: '2-digit'}).format(new Date( Date.parse(issue.createdAt)))}
@@ -76,7 +76,7 @@ class Return extends Component {
       }
 
 render(){
-
+    console.log(this.props.issues);
     if (this.props.issues.isLoading) {
         return(
             <div className="container">
@@ -139,7 +139,7 @@ render(){
             <th>ISBN number</th>
             <th>Issue Date</th>
             <th>Return Deadline</th>
-            <th>Fine (in Rs.)</th>
+            <th>Fine (in Lek.)</th>
             <th>Return book</th> 
            </tr>
         </thead>
@@ -148,7 +148,7 @@ render(){
         </tbody>
         </Table>
             <br/>
-            <h6> Total Fine due (if all pending books are returned today) : Rs. {totalFine} </h6>
+            <h6> Total Fine due (if all pending books are returned today) : Lek. {totalFine} </h6>
             <br/>
             </div>
             </div>

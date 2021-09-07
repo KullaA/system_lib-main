@@ -59,7 +59,7 @@ render(){
     </div>
     <div className="row row-content justify-content-center">
     <LocalForm onSubmit={(values) => {
-        this.props.postBook(values.name, values.author, values.description, values.isbn, values.cat, values.floor, values.shelf, values.copies);
+        this.props.postBook(values.name, values.author, values.description,values.author_bio, values.isbn, values.cat, values.floor, values.shelf, values.copies);
     }}>
                     <Row className="form-group">
                                 <Label htmlFor="name" md={2}>Name </Label>
@@ -103,9 +103,9 @@ render(){
                                 </Col>
                                 </Row>
                                 <Row className="form-group">
-                                <Label htmlFor="description" md={2}>Author Bio</Label>
+                                <Label htmlFor="author_bio" md={2}>Author Bio</Label>
                                 <Col md={10}>
-                                    <Control.textarea model=".description" id="description" name="description"
+                                    <Control.textarea model=".author_bio" id="author_bio" name="author_bio"
                                         rows="9"
                                         placeholder="Author Bio"
                                         className="form-control" />
