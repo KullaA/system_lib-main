@@ -6,10 +6,12 @@ export const addBook = (book) => ({
   payload: book
 });
 
-export const postBook = (name, author, description, isbn, cat, floor, shelf, copies) => (dispatch) => {
+export const postBook = (name, author, description,author_bio, isbn, cat, floor, shelf, copies) => (dispatch) => {
     const newBook = {
       name: name, author: author,
-       description: description, isbn: isbn,
+       description: description,
+       author_bio:  author_bio,
+       isbn: isbn,
         cat: cat, floor: floor, 
         shelf: shelf, copies: copies
     };
@@ -41,11 +43,13 @@ export const postBook = (name, author, description, isbn, cat, floor, shelf, cop
     .catch(error =>  { alert('Your book could not be added\nError: '+error.message); });
 };
 
-export const editBook = (_id, name, author, description, isbn, cat, floor, shelf, copies) => (dispatch) => {
+export const editBook = (_id, name, author, description,author_bio, isbn, cat, floor, shelf, copies) => (dispatch) => {
 
   const newBook = {
     name: name, author: author,
-     description: description, isbn: isbn,
+     description: description, 
+     author_bio: author_bio,
+     isbn: isbn,
       cat: cat, floor: floor, 
       shelf: shelf, copies: copies
   };

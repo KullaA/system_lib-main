@@ -43,8 +43,8 @@ const mapDispatchToProps = dispatch => ({
   fetchBooks: () => { dispatch(fetchBooks())},
   fetchIssues: (student) =>{ dispatch(fetchIssues(student))},
   fetchUsers: () => { dispatch(fetchUsers())},
-  postBook: (name, author, description, isbn, cat, floor, shelf, copies) => dispatch(postBook(name, author, description, isbn, cat, floor, shelf, copies)),
-  editBook: (_id, name, author, description, isbn, cat, floor, shelf, copies) => dispatch(editBook(_id, name, author, description, isbn, cat, floor, shelf, copies)),
+  postBook: (name, author, description, author_bio, isbn, cat, floor, shelf, copies) => dispatch(postBook(name, author, description, author_bio, isbn, cat, floor, shelf, copies)),
+  editBook: (_id, name, author, description, author_bio, isbn, cat, floor, shelf, copies) => dispatch(editBook(_id, name, author, description, author_bio, isbn, cat, floor, shelf, copies)),
   deleteBook: (_id) =>  dispatch(deleteBook(_id)),
   loginUser: (creds) => dispatch(loginUser(creds)),
   logoutUser: () => dispatch(logoutUser()),
@@ -82,7 +82,7 @@ class Main extends Component {
       handleSubmitEdit(values) {
         this.toggleEditModal();
         this.props.editBook(this.state.selectedBook._id, values.name, values.author,
-          values.description, values.isbn, values.cat, values.floor, values.shelf, values.copies);     
+          values.description, values.author_bio, values.isbn, values.cat, values.floor, values.shelf, values.copies);     
         }
     
     changeSelected(_id){
