@@ -23,16 +23,18 @@ app.use(function(req, res, next) {
 });
 
 // Bodyparser Middleware
+// We get access to post data, and allows expres to read the body and parse it to a json obj we can understand.
 app.use(bodyParser.json());
 
 // DB config 
 const mongoURI = require('./config/keys').mongoURI;
 
-// Connect to mongo
+// Connect to mongo using mongoose middleware
 mongoose.connect(mongoURI,{ useNewUrlParser: true, useCreateIndex: true,useFindAndModify:false })
 .then(()=> {console.log("MongoDB Connected");})
 .catch(err => console.log(err));
 
+// Passport middleware takes care of supplying user credentials after user is authenticated successfully
 app.use(passport.initialize());
 
 // Use routes
