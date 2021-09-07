@@ -2,7 +2,7 @@
 
 1.  **admin** credentials:
 
-* **username**: *admin_user*
+* **username**: *adm-user*
 * **password**: *123456*
 
 ##Live App
