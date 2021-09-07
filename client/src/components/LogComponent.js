@@ -26,20 +26,20 @@ function RenderIssue ({issue,i}) {
             {i}
             </td>
             <td>
-            <Link to={`/users/${issue.student._id}`}>
-            {issue.student.firstname+' '+issue.student.lastname}
+            <Link to={`/users/${issue.studentId}`}>
+            {issue.studentFirstname+' '+issue.studentLastname}
             </Link>
             </td>
             <td>
-            {issue.student.roll}
+            {issue.studentRoll}
             </td>
             <td>
-            <Link to={`/books/${issue.book._id}`}>
-            {issue.book.name}
+            <Link to={`/books/${issue.bookId}`}>
+            {issue.bookName}
             </Link>
             </td>
             <td>
-            {issue.book.isbn}
+            {issue.bookIsbn}
             </td>
             <td>
                 {new Intl.DateTimeFormat('en-US',{year: 'numeric', month: 'short', day: '2-digit'}).format(new Date( Date.parse(issue.createdAt)))}
